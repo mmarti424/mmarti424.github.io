@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Interactiva Matronería</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <h1>Malla Interactiva de Matronería</h1>
+  <div id="malla">
+    <div class="semestre" id="semestre-1">
+      <h2>1ER SEMESTRE</h2>
+      <button class="ramo" id="ingles" onclick="aprobar(this)">Inglés General</button>
+      <button class="ramo" id="biocel" onclick="aprobar(this)">Biología Celular</button>
+      <button class="ramo" id="anato" onclick="aprobar(this)">Anatomía Humana</button>
+      <button class="ramo" id="quimica" onclick="aprobar(this)">Química General y Orgánica</button>
+      <button class="ramo" id="fundmatro" onclick="aprobar(this)">Fundamentos de la Matronería</button>
+    </div>
+
+    <div class="semestre" id="semestre-2">
+      <h2>2DO SEMESTRE</h2>
+      <button class="ramo" id="estrategias" onclick="aprobar(this)">Estrategias para el Aprendizaje</button>
+      <button class="ramo" id="fisiologia" data-req="biocel,anato" onclick="aprobar(this)" disabled>Fisiología Humana</button>
+      <button class="ramo" id="histo" data-req="biocel" onclick="aprobar(this)" disabled>Histoembriología</button>
+      <button class="ramo" id="bioqgen" data-req="biocel,quimica" onclick="aprobar(this)" disabled>Bioquímica General</button>
+      <button class="ramo" id="antro" onclick="aprobar(this)">Antropología</button>
+      <button class="ramo" id="fundssyr" data-req="fundmatro" onclick="aprobar(this)" disabled>Fundamentos de la SSYR</button>
+      <button class="ramo" id="psico" onclick="aprobar(this)">Psicología del Curso de la Vida</button>
+      <button class="ramo" id="evidence" data-req="ingles" onclick="aprobar(this)" disabled>Atención en Salud basada en la Evidencia</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+    <div class="semestre" id="3er_semestre">
+      <h2>3ER SEMESTRE</h2>
+      <button class="ramo" id="etica" data-req="antro" onclick="aprobar(this)" disabled>Ética</button>
+      <button class="ramo" id="embriogen" data-req="histo" onclick="aprobar(this)" disabled>Embriología y Genética</button>
+      <button class="ramo" id="micro" data-req="biocel" onclick="aprobar(this)" disabled>Microbiología General</button>
+      <button class="ramo" id="farmagen" data-req="fisiologia,bioqgen" onclick="aprobar(this)" disabled>Farmacología General</button>
+      <button class="ramo" id="farmaapli" data-req="fisiologia,bioqgen" onclick="aprobar(this)" disabled>Farmacología Aplicada</button>
+      <button class="ramo" id="anatoapli" data-req="anato" onclick="aprobar(this)" disabled>Anatomía Aplicada</button>
+      <button class="ramo" id="genero" data-req="antro,fundssyr" onclick="aprobar(this)" disabled>Género y Salud</button>
+      <button class="ramo" id="saludpub1" onclick="aprobar(this)">Salud Pública I</button>
+    </div>
+
+    <div class="semestre" id="4to_semestre">
+      <h2>4TO SEMESTRE</h2>
+      <button class="ramo" id="pae1" data-req="anato,fisiologia,micro" onclick="aprobar(this)" disabled>PAE I</button>
+      <button class="ramo" id="obst1" data-req="bioqgen,embriogen,anatoapli" onclick="aprobar(this)" disabled>Obstetricia I</button>
+      <button class="ramo" id="neo1" data-req="bioqgen,embriogen,fisiologia" onclick="aprobar(this)" disabled>Neonatología I</button>
+      <button class="ramo" id="gine1" data-req="bioqgen,embriogen,fisiologia" onclick="aprobar(this)" disabled>Ginecología I</button>
+      <button class="ramo" id="sex1" data-req="psico,genero" onclick="aprobar(this)" disabled>Sexología I</button>
+      <button class="ramo" id="promo" data-req="antro,psico,genero" onclick="aprobar(this)" disabled>Promoción de la Salud</button>
+      <button class="ramo" id="fisio" data-req="fisiologia" onclick="aprobar(this)" disabled>Fisiopatología</button>
+    </div>
+
+    <div class="semestre" id="5to_semestre">
+      <h2>5TO SEMESTRE</h2>
+      <button class="ramo" id="elect1" data-req="etica" onclick="aprobar(this)" disabled>Electivo de Formación Integral</button>
+      <button class="ramo" id="obst2" data-req="obst1,fisio" onclick="aprobar(this)" disabled>Obstetricia II</button>
+      <button class="ramo" id="neo2" data-req="neo1,fisio" onclick="aprobar(this)" disabled>Neonatología II</button>
+      <button class="ramo" id="gine2" data-req="gine1,fisio" onclick="aprobar(this)" disabled>Ginecología II</button>
+      <button class="ramo" id="pae2" data-req="pae1,obst1,neo1,gine1" onclick="aprobar(this)" disabled>PAE II</button>
+      <button class="ramo" id="saludfam" data-req="genero,promo" onclick="aprobar(this)" disabled>Salud Familiar</button>
+      <button class="ramo" id="saludpub2" data-req="saludpub1" onclick="aprobar(this)" disabled>Salud Pública II</button>
+      <button class="ramo" id="farmaperi" data-req="farmagen,farmaapli" onclick="aprobar(this)" disabled>Farmacología Perinatal y Ginecológica</button>
+    </div>
+
+    <div class="semestre" id="6to_semestre">
+      <h2>6TO SEMESTRE</h2>
+      <button class="ramo" id="integrado1" data-req="pae2,farmaperi" onclick="aprobar(this)" disabled>Integrado Urgencia Ginecológica, Obstétrica y Neonatal</button>
+      <button class="ramo" id="preclinico" data-req="obst2,neo2" onclick="aprobar(this)" disabled>Preclínico Perinatal</button>
+      <button class="ramo" id="regfec" data-req="genero,gine2,farmaperi" onclick="aprobar(this)" disabled>Regulación de la Fecundidad</button>
+      <button class="ramo" id="sex2" data-req="sex1" onclick="aprobar(this)" disabled>Sexología II</button>
+      <button class="ramo" id="edu" data-req="genero,saludfam" onclick="aprobar(this)" disabled>Educación para la Salud</button>
+      <button class="ramo" id="epi" data-req="saludpub1" onclick="aprobar(this)" disabled>Epidemiología para la Gestión</button>
+      <button class="ramo" id="biomed" data-req="etica,fisio,evidence" onclick="aprobar(this)" disabled>Introducción a la Biomedicina</button>
+    </div>
+
+    <div class="semestre" id="7mo_semestre">
+      <h2>7MO SEMESTRE</h2>
+      <button class="ramo" id="elect2" onclick="aprobar(this)">Electivo I</button>
+      <button class="ramo" id="precli_primaria" data-req="preclinico,regfec" onclick="aprobar(this)" disabled>Preclínico de Atención Primaria</button>
+      <button class="ramo" id="clinico1" data-req="preclinico" onclick="aprobar(this)" disabled>Clínico Perinatal I</button>
+      <button class="ramo" id="consejeria" data-req="genero,edu" onclick="aprobar(this)" disabled>Consejería en SSYR</button>
+      <button class="ramo" id="invest" data-req="biomed" onclick="aprobar(this)" disabled>Investigación Científica</button>
+      <button class="ramo" id="bioetica" data-req="etica" onclick="aprobar(this)" disabled>Bioética</button>
+      <button class="ramo" id="gestion" data-req="epi" onclick="aprobar(this)" disabled>Gestión en Salud</button>
+    </div>
+
+    <div class="semestre" id="8vo_semestre">
+      <h2>8VO SEMESTRE</h2>
+      <button class="ramo" id="vida_prof" data-req="bioetica" onclick="aprobar(this)" disabled>Habilidades para la Vida Profesional</button>
+      <button class="ramo" id="clinico_ap" data-req="precli_primaria,sex2,vida_prof" onclick="aprobar(this)" disabled>Clínico de Atención Primaria</button>
+      <button class="ramo" id="clinico_peri2" data-req="clinico1,vida_prof" onclick="aprobar(this)" disabled>Clínico Perinatal II</button>
+      <button class="ramo" id="clinico_gine" data-req="integrado1,gine2,vida_prof" onclick="aprobar(this)" disabled>Clínico Morbilidad Ginecológica</button>
+      <button class="ramo" id="legal" data-req="consejeria,bioetica" onclick="aprobar(this)" disabled>Medicina Legal y Matronería</button>
+      <button class="ramo" id="seminario" data-req="invest" onclick="aprobar(this)" disabled>Seminario de Investigación</button>
+      <button class="ramo" id="marketing" data-req="edu,gestion" onclick="aprobar(this)" disabled>Marketing Social en Salud</button>
+      <button class="ramo" id="integrado2" data-req="clinico_peri2,clinico_gine,clinico_ap" onclick="aprobar(this)" disabled>Integrado Clínico I</button>
+    </div>
+
+    <div class="semestre" id="9no_semestre">
+      <h2>9NO SEMESTRE</h2>
+      <button class="ramo" id="elect3" data-req="integrado2" onclick="aprobar(this)" disabled>Electivo II</button>
+      <button class="ramo" id="onco" data-req="integrado2" onclick="aprobar(this)" disabled>Clínico de Oncología Ginecológica</button>
+      <button class="ramo" id="control" data-req="integrado2" onclick="aprobar(this)" disabled>Clínico de Control Sexual y Consejería</button>
+      <button class="ramo" id="neo_morbi" data-req="integrado2" onclick="aprobar(this)" disabled>Clínico de Morbilidad Neonatal</button>
+      <button class="ramo" id="ssyr_infant" data-req="integrado2" onclick="aprobar(this)" disabled>Clínico de SSYR Infanto-Juvenil</button>
+      <button class="ramo" id="gestion_matro" data-req="integrado2" onclick="aprobar(this)" disabled>Clínico de Gestión en Matronería</button>
+      <button class="ramo" id="integrado3" data-req="integrado2" onclick="aprobar(this)" disabled>Integrado Clínico II</button>
+    </div>
+
+    <div class="semestre" id="10mo_semestre">
+      <h2>10MO SEMESTRE</h2>
+      <button class="ramo" id="internado" data-req="integrado2" onclick="aprobar(this)" disabled>Clínico Intrahospitalario y Extrahospitalario</button>
+    </div>  </div>
+  <script src="script.js"></script>
+</body>
+</html>
